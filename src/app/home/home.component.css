@@ -1,0 +1,23 @@
+.card {
+    width: 100%;
+    max-width: 300px; 
+  }
+  
+  .card-img-top {
+    height: 180px; 
+    object-fit: cover; 
+  }
+  
+  .card-body {
+    padding: 1rem; 
+  }
+  
+  .card-title {
+    font-size: 1.25rem; 
+  }
+  
+  .card-text {
+  
+    font-size: 0.875rem;
+  }
+  

@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="product">
+    <h1>{{ product.name }}</h1>
+    <img [src]="product.image" class="img-fluid" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+  </div>
+  <div *ngIf="!product" class="text-md-center">
+    <p>Loading...</p>
+  </div>
+</div>
