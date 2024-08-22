@@ -1,5 +1,70 @@
-<div class="container">
-    <h1>About Page</h1>
-    <p>Information about us.</p>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+    <style>
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .product {
+            width: 30%;
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Page</h1>
+        <p>Information about us.</p>
+    </div>
+
+    <div>
+        <label for="filter">Filter by:</label>
+        <select id="filter" onchange="filterProducts()">
+            <option value="all">All</option>
+            <option value="adidas">Adidas</option>
+            <option value="nike">Nike</option>
+            <option value="puma">Puma</option>
+        </select>
+    </div>
+
+    <div class="products">
+        <div class="product" data-brand="adidas">Adidas Product 1</div>
+        <div class="product" data-brand="nike">Nike Product 1</div>
+        <div class="product" data-brand="puma">Puma Product 1</div>
+        <div class="product" data-brand="adidas">Adidas Product 2</div>
+        <div class="product" data-brand="nike">Nike Product 2</div>
+        <div class="product" data-brand="puma">Puma Product 2</div>
+    </div>
+
+    <script>
+        function filterProducts() {
+            var filter = document.getElementById("filter").value;
+            var products = document.querySelectorAll(".product");
+
+            products.forEach(function(product) {
+                if (filter === "all") {
+                    product.style.display = "block";
+                } else {
+                    if (product.getAttribute("data-brand") === filter) {
+                        product.style.display = "block";
+                    } else {
+                        product.style.display = "none";
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
