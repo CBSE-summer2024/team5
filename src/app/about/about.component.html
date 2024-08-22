@@ -29,41 +29,54 @@
     </div>
 
     <div>
-        <label for="filter">Filter by:</label>
+        <label for="filter">Filter by category:</label>
         <select id="filter" onchange="filterProducts()">
             <option value="all">All</option>
-            <option value="adidas">Adidas</option>
-            <option value="nike">Nike</option>
-            <option value="puma">Puma</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men's Clothing</option>
+            <option value="women's clothing">Women's Clothing</option>
         </select>
     </div>
 
-    <div class="products">
-        <div class="product" data-brand="adidas">Adidas Product 1</div>
-        <div class="product" data-brand="nike">Nike Product 1</div>
-        <div class="product" data-brand="puma">Puma Product 1</div>
-        <div class="product" data-brand="adidas">Adidas Product 2</div>
-        <div class="product" data-brand="nike">Nike Product 2</div>
-        <div class="product" data-brand="puma">Puma Product 2</div>
+    <div class="products" id="product-list">
     </div>
 
     <script>
-        function filterProducts() {
-            var filter = document.getElementById("filter").value;
-            var products = document.querySelectorAll(".product");
+        let productsData = [];
 
-            products.forEach(function(product) {
-                if (filter === "all") {
-                    product.style.display = "block";
-                } else {
-                    if (product.getAttribute("data-brand") === filter) {
-                        product.style.display = "block";
-                    } else {
-                        product.style.display = "none";
-                    }
-                }
+        function fetchProducts() {
+            fetch('https://fakestoreapi.com/products')
+                .then(response => response.json())
+                .then(data => {
+                    productsData = data;
+                    displayProducts(productsData);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function displayProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+
+            products.forEach(product => {
+                productList.innerHTML += `
+                    <div class="product" data-category="${product.category}">
+                        <h3>${product.title}</h3>
+                        <img src="${product.image}" alt="${product.title}" style="width:100px; height:auto;">
+                        <p>Price: $${product.price}</p>
+                    </div>
+                `;
             });
         }
+
+        function filterProducts() {
+            const filter = document.getElementById("filter").value;
+            const filteredProducts = filter === "all" ? productsData : productsData.filter(product => product.category === filter);
+            displayProducts(filteredProducts);
+        }
+
+        window.onload = fetchProducts;
     </script>
 
 </body>
