@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -6,53 +15,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products = [
-    {
-      id: 1,
-      name: "Stylish Shirt",
-      description: "A stylish shirt for every occasion.",
-      price: 50,
-      image: "https://via.placeholder.com/150"
-    },
-    {
-      id: 2,
-      name: "Casual Jacket",
-      description: "A comfortable and casual jacket.",
-      price: 120,
-      image: "https://via.placeholder.com/150"
-    },
-    {
-      id: 3,
-      name: "Summer Dress",
-      description: "A light and breezy summer dress.",
-      price: 80,
-      image: "https://via.placeholder.com/150"
-    },
-    {
-      id: 4,
-      name: "Winter Sweater",
-      description: "A warm and cozy winter sweater.",
-      price: 90,
-      image: "https://via.placeholder.com/150"
-    },
-    {
-      id: 5,
-      name: "Formal Suit",
-      description: "A sharp and elegant formal suit.",
-      price: 250,
-      image: "https://via.placeholder.com/150"
-    },
-    {
-      id: 6,
-      name: "Casual Shorts",
-      description: "Comfortable shorts for casual wear.",
-      price: 40,
-      image: "https://via.placeholder.com/150"
+  products: Product[] = [];
+  paginatedProducts: Product[] = [];
+  currentPage: number = 1;
+  pageSize: number = 6; // Show 6 products per page
+  totalProducts: number = 0;
+  totalPages: number = 0;
+  pagesArray: number[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchProducts();
+  }
+
+  fetchProducts(): void {
+    this.http.get<Product[]>('https://fakestoreapi.com/products').subscribe(data => {
+      this.products = data;
+      this.totalProducts = this.products.length;
+      this.totalPages = Math.ceil(this.totalProducts / this.pageSize);
+      this.createPagesArray();
+      this.updatePaginatedProducts();
+    });
+  }
+
+  updatePaginatedProducts(): void {
+    const start = (this.currentPage - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    this.paginatedProducts = this.products.slice(start, end);
+  }
+
+  onPageChange(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePaginatedProducts();
     }
-  ];
+  }
 
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  createPagesArray(): void {
+    this.pagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
 }

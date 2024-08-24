@@ -1,23 +1,19 @@
 .card {
-    width: 100%;
-    max-width: 300px; 
-  }
-  
-  .card-img-top {
-    height: 180px; 
-    object-fit: cover; 
-  }
-  
-  .card-body {
-    padding: 1rem; 
-  }
-  
-  .card-title {
-    font-size: 1.25rem; 
-  }
-  
-  .card-text {
-  
-    font-size: 0.875rem;
-  }
-  
+  border: 1px solid #ddd;
+  border-radius: 0.375rem;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}

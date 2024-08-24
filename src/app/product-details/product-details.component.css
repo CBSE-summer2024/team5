@@ -1,16 +1,70 @@
-.product-details {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .product-details img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .product-details .price {
-    font-size: 1.5em;
-    color: #333;
-    margin-top: 10px;
-  }
-  
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-secondary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d; /* Darker color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.custom-button-gap .btn {
+  margin-right: 15px; /* Adjust gap between buttons */
+}
+
+.custom-button-gap .btn:last-child {
+  margin-right: 0;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.bi-star {
+  font-size: 1.25rem;
+}
+
+.bi-star-half {
+  font-size: 1.25rem;
+}
+/* Customize toastr styles */
+.toast-success {
+  background-color: #28a745;
+}
+
+.toast-error {
+  background-color: #dc3545;
+}
+
+.toast-warning {
+  background-color: #ffc107;
+}
