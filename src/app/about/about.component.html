@@ -1,83 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Filter</title>
-    <style>
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .product {
-            width: 30%;
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body>
+<di<div class="container">
+    <h1>About Page</h1>
+    <p>Information about us.</p>
+</div>
 
-    <div class="container">
-        <h1>About Page</h1>
-        <p>Information about us.</p>
+<div>
+    <label for="filter-price">Price:</label>
+    <select id="filter-price" [(ngModel)]="priceFilter" (change)="filterProducts()">
+        <option value="all">All</option>
+        <option value="0-50">$0 - $50</option>
+        <option value="51-100">$51 - $100</option>
+        <option value="101-200">$101 - $200</option>
+        <option value="201-500">$201 - $500</option>
+        <option value="501-1000">$501 - $1000</option>
+    </select>
+    
+    <label for="filter-title">Title:</label>
+    <input type="text" id="filter-title" [(ngModel)]="titleFilter" (input)="filterProducts()">
+
+    <label for="filter-description">Description:</label>
+    <input type="text" id="filter-description" [(ngModel)]="descriptionFilter" (input)="filterProducts()">
+</div>
+
+<div class="products" id="product-list">
+    <div class="product" *ngFor="let product of filteredProducts">
+        <img [src]="product.image" [alt]="product.title" style="width:100px; height:100px;">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <p><strong>${{ product.price }}</strong></p>
     </div>
+</div>
 
-    <div>
-        <label for="filter">Filter by category:</label>
-        <select id="filter" onchange="filterProducts()">
-            <option value="all">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="jewelery">Jewelery</option>
-            <option value="men's clothing">Men's Clothing</option>
-            <option value="women's clothing">Women's Clothing</option>
-        </select>
-    </div>
 
-    <div class="products" id="product-list">
-    </div>
-
-    <script>
-        let productsData = [];
-
-        function fetchProducts() {
-            fetch('https://fakestoreapi.com/products')
-                .then(response => response.json())
-                .then(data => {
-                    productsData = data;
-                    displayProducts(productsData);
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
-
-        function displayProducts(products) {
-            const productList = document.getElementById('product-list');
-            productList.innerHTML = '';
-
-            products.forEach(product => {
-                productList.innerHTML += `
-                    <div class="product" data-category="${product.category}">
-                        <h3>${product.title}</h3>
-                        <img src="${product.image}" alt="${product.title}" style="width:100px; height:auto;">
-                        <p>Price: $${product.price}</p>
-                    </div>
-                `;
-            });
-        }
-
-        function filterProducts() {
-            const filter = document.getElementById("filter").value;
-            const filteredProducts = filter === "all" ? productsData : productsData.filter(product => product.category === filter);
-            displayProducts(filteredProducts);
-        }
-
-        window.onload = fetchProducts;
-    </script>
-
-</body>
-</html>
