@@ -1,11 +1,47 @@
-<div class="container">
-  <div *ngIf="product">
-    <h1>{{ product.name }}</h1>
-    <img [src]="product.image" class="img-fluid" alt="{{ product.name }}">
-    <p>{{ product.description }}</p>
-    <p><strong>Price:</strong> ${{ product.price }}</p>
-  </div>
-  <div *ngIf="!product" class="text-md-center">
-    <p>Loading...</p>
+<div class="container mt-5" *ngIf="product">
+  <div class="row mb-5">
+    <!-- Product Image -->
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img [src]="product.image" alt="{{ product.name }}" class="img-fluid rounded shadow-lg" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h2 class="mb-3">{{ product.name }}</h2>
+      <p class="lead">{{ product.description }}</p>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <p><strong>Original Price:</strong> ${{ product.originalPrice }}</p>
+      <p><strong>Product Number:</strong> {{ product.productNumber }}</p>
+      <p><strong>Brand:</strong> {{ product.brand }}</p>
+      <p><strong>Model Number:</strong> {{ product.modelNumber }}</p>
+
+      <!-- Size Selection -->
+      <div *ngIf="product && product.sizes && product.sizes.length > 0" class="mb-4">
+        <h4>Select Size</h4>
+        <ul class="list-unstyled d-flex flex-wrap gap-2">
+          <li *ngFor="let size of product.sizes">
+            <button (click)="selectSize(size)" [class.btn-primary]="selectedSize === size" [class.btn-outline-secondary]="selectedSize !== size" class="btn btn-sm">
+              {{ size }}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Selected Size Display -->
+      <div *ngIf="selectedSize" class="mb-4">
+        <p><strong>Selected Size:</strong> {{ selectedSize }}</p>
+      </div>
+
+      <!-- Delivery Information and Policies -->
+      <p class="mb-2"><strong>Delivery Information:</strong> {{ product.deliveryInfo }}</p>
+      <a [href]="product.returnPolicyUrl" target="_blank" class="d-block mb-2">Return Policy</a>
+      <a [href]="product.exchangePolicyUrl" target="_blank" class="d-block mb-4">Exchange Policy</a>
+
+      <!-- Action Buttons -->
+      <div class="d-flex custom-button-gap">
+        <button class="btn btn-primary btn-lg" (click)="buyNow()">Buy Now</button>
+        <button class="btn btn-secondary btn-lg" (click)="addToCart()">Add to Cart</button>
+      </div>
+    </div>
   </div>
 </div>
