@@ -1,0 +1,47 @@
+.search-results-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 65px;
+}
+
+.product-card {
+  width: 20%; /* Adjust to 40% for the product cards */
+  margin: 0 20px 25px 20px;
+  padding: 0;
+}
+
+.fixed-size-card {
+  width: 100%; /* Ensure the card takes the full width of the container */
+  height: 300px; /* Set a fixed height */
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+}
+
+.product-image {
+  max-height: 120px; /* Adjust the height of the image as needed */
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.card-text:last-child {
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
