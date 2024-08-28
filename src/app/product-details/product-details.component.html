@@ -2,11 +2,13 @@
   <div class="row mb-5">
     <!-- Product Image -->
     <div class="col-md-6 mb-4 mb-md-0">
-      <img [src]="product.image" alt="{{ product.name }}" class="img-fluid rounded shadow-lg" style="max-width: 100%; height: auto;">
+      <img [src]="product.image" alt="{{ product.name }}" class="img-fluid rounded shadow-lg" style="max-width: 80%; height: auto;">
     </div>
 
     <!-- Product Details -->
     <div class="col-md-6">
+      <div class="lead"><strong>Description:</strong></div>
+
       <h2 class="mb-3">{{ product.name }}</h2>
       <p class="lead">{{ product.description }}</p>
       <p><strong>Price:</strong> ${{ product.price }}</p>
