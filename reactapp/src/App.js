@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import NavbarComponent from './components/Navbar/navbar.js';
-import CategorySection from './components/menu/menu.js';
-import HeaderSection from './components/header/header.js';
+import NavbarComponent from './components/Navbar/navbar.jsx';
+import CategorySection from './components/menu/menu.jsx';
+import HeaderSection from './components/header/header.jsx';
 import './App.css';
-import SearchResults from './components/search/SearchResults.js';
+import SearchResults from './components/search/SearchResults.jsx';
 
 function App() {
  
