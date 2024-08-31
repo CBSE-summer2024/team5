@@ -68,34 +68,8 @@ cd component-directory
 
 **Project Organization**
 The project is organized into separate folders for each microfrontend, including shared libraries and resources:
-  /repo-root
-  
-│
-
-├── /search-component (Lit)
-│   
-├── src
-
-│   
-
-└── package.json
-
-│
-
-├── /menu-component (React)
-│ 
-
-├── src
-│   └── package.json
-│
-
-├── /filter-component (Vue.js)
-│   ├── src
-│   └── package.json
-│
-└── /host-app (Vue.js)
-    ├── src
-    └── package.json
+ 
+![Screenshot 2024-08-31 184310](https://github.com/user-attachments/assets/e1d6a5ca-02b6-478f-9090-4f89d62ff8b8)
 
 **Microfrontend Modules**
 - **Search Component:** Developed with Lit, focuses on efficient search functionalities.
