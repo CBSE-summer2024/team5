@@ -70,6 +70,7 @@ cd component-directory
 The project is organized into separate folders for each microfrontend, including shared libraries and resources:
   /repo-root
 │
+
 ├── /search-component (Lit)
 │   ├── src
 │   └── package.json
