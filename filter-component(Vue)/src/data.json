@@ -1,0 +1,209 @@
+{
+  "sections": [
+    {
+      "name": "Books",
+      "categories": [
+        {
+          "name": "Fiction",
+          "items": [
+            { "id": 1, "name": "Mystery Novel", "price": 9.99 },
+            { "id": 2, "name": "Science Fiction", "price": 14.99 },
+            { "id": 3, "name": "Fantasy Adventure", "price": 12.99 },
+            { "id": 4, "name": "Historical Drama", "price": 11.99 }
+          ]
+        },
+        {
+          "name": "Non-Fiction",
+          "items": [
+            { "id": 5, "name": "Self-Help", "price": 15.99 },
+            { "id": 6, "name": "Biography", "price": 19.99 },
+            { "id": 7, "name": "Travel Guide", "price": 21.99 },
+            { "id": 8, "name": "Cookbook", "price": 24.99 }
+          ]
+        },
+        {
+          "name": "Comics & Graphic Novels",
+          "items": [
+            { "id": 9, "name": "Superhero Comics", "price": 4.99 },
+            { "id": 10, "name": "Manga", "price": 6.99 },
+            { "id": 11, "name": "Graphic Novel", "price": 16.99 },
+            { "id": 12, "name": "Webtoon Collection", "price": 8.99 }
+          ]
+        },
+        {
+          "name": "Children's Books",
+          "items": [
+            { "id": 13, "name": "Picture Book", "price": 5.99 },
+            { "id": 14, "name": "Early Reader", "price": 6.49 },
+            { "id": 15, "name": "Chapter Book", "price": 7.99 },
+            { "id": 16, "name": "Activity Book", "price": 4.99 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Beauty & Personal Care",
+      "categories": [
+        {
+          "name": "Skincare",
+          "items": [
+            { "id": 17, "name": "Moisturizer", "price": 22.99 },
+            { "id": 18, "name": "Facial Cleanser", "price": 15.99 },
+            { "id": 19, "name": "Sunscreen", "price": 18.99 },
+            { "id": 20, "name": "Face Mask", "price": 12.99 }
+          ]
+        },
+        {
+          "name": "Hair Care",
+          "items": [
+            { "id": 21, "name": "Shampoo", "price": 8.99 },
+            { "id": 22, "name": "Conditioner", "price": 9.99 },
+            { "id": 23, "name": "Hair Oil", "price": 14.99 },
+            { "id": 24, "name": "Hair Serum", "price": 19.99 }
+          ]
+        },
+        {
+          "name": "Makeup",
+          "items": [
+            { "id": 25, "name": "Foundation", "price": 29.99 },
+            { "id": 26, "name": "Mascara", "price": 14.99 },
+            { "id": 27, "name": "Lipstick", "price": 12.99 },
+            { "id": 28, "name": "Eyeshadow Palette", "price": 24.99 }
+          ]
+        },
+        {
+          "name": "Fragrances",
+          "items": [
+            { "id": 29, "name": "Perfume", "price": 49.99 },
+            { "id": 30, "name": "Cologne", "price": 39.99 },
+            { "id": 31, "name": "Body Mist", "price": 19.99 },
+            { "id": 32, "name": "Scented Oil", "price": 29.99 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gardening & Outdoor",
+      "categories": [
+        {
+          "name": "Plants",
+          "items": [
+            { "id": 33, "name": "Succulents", "price": 5.99 },
+            { "id": 34, "name": "Herbs", "price": 4.99 },
+            { "id": 35, "name": "Flowering Plants", "price": 12.99 },
+            { "id": 36, "name": "Indoor Plants", "price": 9.99 }
+          ]
+        },
+        {
+          "name": "Garden Tools",
+          "items": [
+            { "id": 37, "name": "Pruning Shears", "price": 15.99 },
+            { "id": 38, "name": "Garden Trowel", "price": 7.99 },
+            { "id": 39, "name": "Watering Can", "price": 11.99 },
+            { "id": 40, "name": "Rake", "price": 14.99 }
+          ]
+        },
+        {
+          "name": "Outdoor Furniture",
+          "items": [
+            { "id": 41, "name": "Patio Set", "price": 299.99 },
+            { "id": 42, "name": "Hammock", "price": 59.99 },
+            { "id": 43, "name": "Garden Bench", "price": 89.99 },
+            { "id": 44, "name": "Outdoor Umbrella", "price": 49.99 }
+          ]
+        },
+        {
+          "name": "Grills & Outdoor Cooking",
+          "items": [
+            { "id": 45, "name": "Gas Grill", "price": 199.99 },
+            { "id": 46, "name": "Charcoal Grill", "price": 129.99 },
+            { "id": 47, "name": "Smoker", "price": 159.99 },
+            { "id": 48, "name": "Outdoor Pizza Oven", "price": 299.99 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Art & Craft Supplies",
+      "categories": [
+        {
+          "name": "Painting",
+          "items": [
+            { "id": 49, "name": "Acrylic Paint Set", "price": 19.99 },
+            { "id": 50, "name": "Watercolor Paints", "price": 14.99 },
+            { "id": 51, "name": "Canvas Board", "price": 9.99 },
+            { "id": 52, "name": "Brush Set", "price": 12.99 }
+          ]
+        },
+        {
+          "name": "Drawing",
+          "items": [
+            { "id": 53, "name": "Sketchbook", "price": 7.99 },
+            { "id": 54, "name": "Graphite Pencils", "price": 5.99 },
+            { "id": 55, "name": "Charcoal Sticks", "price": 8.99 },
+            { "id": 56, "name": "Eraser Set", "price": 3.99 }
+          ]
+        },
+        {
+          "name": "Crafting",
+          "items": [
+            { "id": 57, "name": "Glue Gun", "price": 14.99 },
+            { "id": 58, "name": "Craft Paper", "price": 6.99 },
+            { "id": 59, "name": "Bead Set", "price": 9.99 },
+            { "id": 60, "name": "Sewing Kit", "price": 19.99 }
+          ]
+        },
+        {
+          "name": "Sculpting",
+          "items": [
+            { "id": 61, "name": "Clay", "price": 9.99 },
+            { "id": 62, "name": "Sculpting Tools", "price": 12.99 },
+            { "id": 63, "name": "Mold Kit", "price": 19.99 },
+            { "id": 64, "name": "Plaster of Paris", "price": 7.99 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pet Supplies",
+      "categories": [
+        {
+          "name": "Pet Food",
+          "items": [
+            { "id": 65, "name": "Dog Food", "price": 29.99 },
+            { "id": 66, "name": "Cat Food", "price": 24.99 },
+            { "id": 67, "name": "Bird Seed", "price": 12.99 },
+            { "id": 68, "name": "Fish Flakes", "price": 6.99 }
+          ]
+        },
+        {
+          "name": "Toys & Accessories",
+          "items": [
+            { "id": 69, "name": "Chew Toy", "price": 7.99 },
+            { "id": 70, "name": "Pet Bed", "price": 49.99 },
+            { "id": 71, "name": "Scratching Post", "price": 39.99 },
+            { "id": 72, "name": "Bird Cage", "price": 59.99 }
+          ]
+        },
+        {
+          "name": "Pet Grooming",
+          "items": [
+            { "id": 73, "name": "Shampoo", "price": 9.99 },
+            { "id": 74, "name": "Brush", "price": 6.99 },
+            { "id": 75, "name": "Nail Clippers", "price": 8.99 },
+            { "id": 76, "name": "Ear Cleaner", "price": 5.99 }
+          ]
+        },
+        {
+          "name": "Pet Health",
+          "items": [
+            { "id": 77, "name": "Flea Treatment", "price": 29.99 },
+            { "id": 78, "name": "Joint Supplements", "price": 19.99 },
+            { "id": 79, "name": "Vitamins", "price": 14.99 },
+            { "id": 80, "name": "Dental Chews", "price": 12.99 }
+          ]
+        }
+      ]
+    }
+  ]
+}
