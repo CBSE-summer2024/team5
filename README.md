@@ -39,8 +39,7 @@ The integration is achieved through client-side routing and Webpack Module Feder
 - **UI Elements:** Each component manages its UI, ensuring minimal conflicts and independent styling.
 
 **Integration Challenges:**  
-- **Framework Compatibility:** Initial integration attempts with Angular and React faced significant challenges due to compatibility issues, making maintenance complex. Switching to Vue.js and React simplified this integration.
-- **Performance Bottlenecks:** Ensuring smooth inter-component communication without compromising performance was addressed by optimizing the event bus and minimizing shared state dependencies.
+- **Framework Compatibility:** Initial integration attempts with Angular and React faced significant challenges due to compatibility issues, making maintenance complex. Switching to Vue.js , React and Lit  simplified this integration.
 
 ---
 
