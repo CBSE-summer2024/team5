@@ -69,16 +69,26 @@ cd component-directory
 **Project Organization**
 The project is organized into separate folders for each microfrontend, including shared libraries and resources:
   /repo-root
+  
 │
 
 ├── /search-component (Lit)
-│   ├── src
-│   └── package.json
+│   
+├── src
+
+│   
+
+└── package.json
+
 │
+
 ├── /menu-component (React)
-│   ├── src
+│ 
+
+├── src
 │   └── package.json
 │
+
 ├── /filter-component (Vue.js)
 │   ├── src
 │   └── package.json
